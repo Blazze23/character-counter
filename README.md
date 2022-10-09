@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Character / Word Counter App
+
+This is a small and simple app that counts, characters, words, lines, and symbols entered in to the textarea. It is created with React.
+Live preview available at:
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

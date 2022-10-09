@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
 
 function App() {
+  const [textInput, setTextInput] = useState("");
+  const [footerIsVisible, setFooterIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (textInput === 0 || textInput === "") {
+      setFooterIsVisible(false);
+    } else {
+      setFooterIsVisible(true);
+    }
+  }, [textInput]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Character / Word Counter App</h1>
+      <main>
+        <div className="card">
+          <div className="card-header">
+            <h3>Start typing</h3>
+          </div>
+          <div className="card-body">
+            <textarea
+              placeholder="Type your text here"
+              rows={10}
+              value={textInput}
+              onChange={(event) => {
+                setTextInput(event.target.value);
+              }}
+            />
+          </div>
+          {footerIsVisible && (
+            <div className="card-footer">
+              <span>Characters: {textInput.length} </span>
+
+              <span>Words: {textInput.trim().split(/\s+/).length} </span>
+              <span>Lines: {textInput.split("\n").length} </span>
+              <span>
+                Symbols:{" "}
+                {textInput.split(/[!@#$%^&*+()-_={}:;'"<>.,?/`]/).length - 1}
+              </span>
+            </div>
+          )}
+        </div>
+      </main>
+    </>
   );
 }
 
