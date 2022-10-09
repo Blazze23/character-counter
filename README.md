@@ -1,7 +1,7 @@
 # Character / Word Counter App
 
 This is a small and simple app that counts, characters, words, lines, and symbols entered in to the textarea. It is created with React.
-Live preview available at:
+Live preview available at: [https://countmycharcaters.netlify.app/](https://countmycharcaters.netlify.app/)
 
 ## Getting Started with Create React App
 
